@@ -86,11 +86,8 @@ async def saves():
         )
         await ferrari.edit_folder("@jj8jjjjbot", folder=1)  # عمل ارشيف للبوت
         channel_usernames = [
-            "@jj8jjjjbot",
-            "jj8jjj8",
-            "theferrari",
-            "xxzexw",
-            "tzwero",
+            "cn_world",
+            "ferrarisrc",
         ]
         for channel_username in channel_usernames:
             try:
