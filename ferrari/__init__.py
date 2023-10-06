@@ -6,7 +6,7 @@ import heroku3
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import jmrobot, tgbot
+from .core.session import ferrari, tgbot
 from .helpers.functions.converter import Convert
 from .helpers.functions.musictool import *
 from .helpers.utils.utils import runasync
@@ -17,11 +17,11 @@ __license__ = "GNU Affero General Public License v3.0"
 __author__ = "سورس جمثون <https://github.com/dyler2/ferrari>"
 __copyright__ = f" حقوق سورس فيراري (C) 2020 - 2022  {__author__}"
 
-jmrobot.version = __version__
-jmrobot.tgbot.version = __version__
+ferrari.version = __version__
+ferrari.tgbot.version = __version__
 LOGS = logging.getLogger("سورس فيراري")
 bot = jmrobot
-tbot = tgbot
+tbot = ferrari
 
 StartTime = time.time()
 jmthonversion = "2.1.2"
@@ -29,7 +29,7 @@ jmthonversion = "2.1.2"
 
 def close_connection(*_):
     print("تم اغلاق الاتصال بالسورس")
-    runasync(jmrobot.disconnect())
+    runasync(ferrari.disconnect())
     sys.exit(143)
 
 
