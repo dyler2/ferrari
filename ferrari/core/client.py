@@ -196,7 +196,7 @@ class FerrariClient(TelegramClient):
                             Config.PRIVATE_GROUP_BOT_API_ID, text, link_preview=False
                         )
 
-            from .session import jmrobot
+            from .session import 
 
             if not func.__doc__ is None:
                 CMD_INFO[command[0]].append((func.__doc__).strip())
@@ -209,18 +209,18 @@ class FerrariClient(TelegramClient):
                     except BaseException:
                         LOADED_CMDS.update({command[0]: [wrapper]})
                 if edited:
-                    jmrobot.add_event_handler(
+                    ferrari.add_event_handler(
                         wrapper,
                         MessageEdited(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                     )
-                jmrobot.add_event_handler(
+                ferrari.add_event_handler(
                     wrapper,
                     NewMessage(pattern=REGEX_.regex1, outgoing=True, **kwargs),
                 )
                 if allow_sudo and gvarstatus("sudoenable") is not None:
                     if command is None or command[0] in sudo_enabledcmds:
                         if edited:
-                            jmrobot.add_event_handler(
+                            ferrari.add_event_handler(
                                 wrapper,
                                 MessageEdited(
                                     pattern=REGEX_.regex2,
@@ -228,7 +228,7 @@ class FerrariClient(TelegramClient):
                                     **kwargs,
                                 ),
                             )
-                        jmrobot.add_event_handler(
+                        ferrari.add_event_handler(
                             wrapper,
                             NewMessage(
                                 pattern=REGEX_.regex2,
@@ -244,8 +244,8 @@ class FerrariClient(TelegramClient):
                 except BaseException:
                     LOADED_CMDS.update({file_test: [func]})
                 if edited:
-                    jmrobot.add_event_handler(func, events.MessageEdited(**kwargs))
-                jmrobot.add_event_handler(func, events.NewMessage(**kwargs))
+                    ferrari.add_event_handler(func, events.MessageEdited(**kwargs))
+                ferrari.add_event_handler(func, events.NewMessage(**kwargs))
             return wrapper
 
         return decorator
@@ -338,14 +338,14 @@ class FerrariClient(TelegramClient):
         self.running_processes.clear()
 
 
-FerrariClient.fast_download_file = download_file
-FerrariClient.fast_upload_file = upload_file
-FerrariClient.reload = restart_script
-FerrariClient.get_msg_link = get_message_link
-FerrariClient.check_testcases = checking
+JmthonClient.fast_download_file = download_file
+JmthonClient.fast_upload_file = upload_file
+JmthonClient.reload = restart_script
+JmthonClient.get_msg_link = get_message_link
+JmthonClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    FerrariClient.send_message = send_message
-    FerrariClient.send_file = send_file
-    FerrariClient.edit_message = edit_message
+    JmthonClient.send_message = send_message
+    JmthonClient.send_file = send_file
+    JmthonClient.edit_message = edit_message
