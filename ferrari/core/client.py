@@ -338,14 +338,14 @@ class FerrariClient(TelegramClient):
         self.running_processes.clear()
 
 
-JmthonClient.fast_download_file = download_file
-JmthonClient.fast_upload_file = upload_file
-JmthonClient.reload = restart_script
-JmthonClient.get_msg_link = get_message_link
-JmthonClient.check_testcases = checking
+FerrariClient.fast_download_file = download_file
+FerrariClient.fast_upload_file = upload_file
+FerrariClient.reload = restart_script
+FerrariClient.get_msg_link = get_message_link
+FerrariClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    JmthonClient.send_message = send_message
-    JmthonClient.send_file = send_file
-    JmthonClient.edit_message = edit_message
+    FerrariClient.send_message = send_message
+    FerrariClient.send_file = send_file
+    FerrariClient.edit_message = edit_message
