@@ -20,7 +20,7 @@ __copyright__ = f" حقوق سورس فيراري (C) 2020 - 2022  {__author__}"
 ferrari.version = __version__
 ferrari.tgbot.version = __version__
 LOGS = logging.getLogger("سورس فيراري")
-bot = jmrobot
+bot = ferrari
 tbot = ferrari
 
 StartTime = time.time()
