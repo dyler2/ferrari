@@ -1,5 +1,3 @@
-# by: t.me/Dar4k  ~ t.me/R0R77
-
 import random
 
 import requests
